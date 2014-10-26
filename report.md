@@ -1,0 +1,64 @@
+BMI and BMR calculator
+========================================================
+author: yr2193
+date: 10/26/2014
+
+What are BMI and BMR?
+========================================================
+
+## BMI
+
+BMI, aka body mass index, is a measure of relative weight 
+based on an individual's mass and height. It is used as a
+simple method to assess how much an individual's body weight 
+departs from what is normal or desirable for a person of his
+or her height.
+
+## BMR
+
+BMR, aka basal metabolic rate, is the rate of energy expenditure
+by humans at rest. It is calculated using Revised Harris-Benedict Equation. 
+
+    The two values provide insights about a person's health and are quite useful for weight watch.
+
+Formula for BMI and BMR
+========================================================
+
+For example, a female of height 5'4, weight 130 lbs, age 24, the BMI and BMR values are calculated in below.
+
+```r
+ft <- 5; inch <- 4; wt <- 130; age<-24
+
+BMI <- round(wt*703/(12*ft+inch)^2, 2)
+
+BMR <- round(447.593+(9.247*wt*0.45359)+3.098*(12*ft+inch)*2.54-4.33*age,2)
+
+print(paste("The person's BMI is", BMI,"and BMR is",BMR,"kcal/day."))
+```
+
+```
+[1] "The person's BMI is 22.31 and BMR is 1392.55 kcal/day."
+```
+
+
+Understanding the BMI and BMR values
+========================================================
+
+In the previous example, since her BMI is 22.31, according to the standard on [NIH](http://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm), she has a normal weight. 
+
+Her BMR value indicates the minimum energy she needs inorder to maintain her current body weight.
+
+Furthermore, if someone wants to loss weight, BMR tells him/her how many calories he/she can have on a daily base.
+
+
+
+About
+========================================================
+This app is made as a project for a Coursera course: 
+Developing Data Products for data science specialization.
+
+It provides BMI and BMR values, which are quite useful for 
+weight monitoring.
+
+The code was written in R and hosted by shiny apps at 
+https://yr2193.shinyapps.io/project/
